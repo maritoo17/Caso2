@@ -1,8 +1,15 @@
 package Habitats;
 
+import Animales.Animal;
+import Animales.Animal_acuatico;
+
+import java.util.List;
+
 public class Habitat_acuatico extends Habitat {
     double salinidad;
     double profundidad;
+
+    List <Animal_acuatico> animales;
 
     public Habitat_acuatico (String nombre, double temperatura, double humedad, double limpieza, double salinidad, double profundidad) {
         super(nombre, temperatura, humedad, limpieza);
