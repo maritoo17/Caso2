@@ -4,9 +4,9 @@ public class Habitat {
     String nombre;
     double temperatura;
     double humedad;
-    double limpieza;
+    String limpieza;
 
-    public Habitat(String nombre, double temperatura, double humedad, double limpieza) {
+    public Habitat(String nombre, double temperatura, double humedad, String limpieza) {
         this.nombre = nombre;
         this.temperatura = temperatura;
         this.humedad = humedad;
