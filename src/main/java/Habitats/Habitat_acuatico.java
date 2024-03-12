@@ -11,7 +11,7 @@ public class Habitat_acuatico extends Habitat {
 
     List <Animal_acuatico> animales;
 
-    public Habitat_acuatico (String nombre, double temperatura, double humedad, double limpieza, double salinidad, double profundidad) {
+    public Habitat_acuatico (String nombre, double temperatura, double humedad, String limpieza, double salinidad, double profundidad) {
         super(nombre, temperatura, humedad, limpieza);
         this.salinidad = salinidad;
         this.profundidad = profundidad;
