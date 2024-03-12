@@ -10,7 +10,7 @@ public class Habitat_terrestre extends Habitat {
 
     List <Animal_terrestre> animales;
 
-    public Habitat_terrestre(String nombre, double temperatura, double humedad, double limpieza, String tipo_suelo, String vegetación) {
+    public Habitat_terrestre(String nombre, double temperatura, double humedad, String limpieza, String tipo_suelo, String vegetación) {
         super(nombre, temperatura, humedad, limpieza);
         this.tipo_suelo = tipo_suelo;
         this.vegetación = vegetación;
