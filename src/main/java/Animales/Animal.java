@@ -8,7 +8,7 @@ public class Animal implements AutoCloseable {
     String color;
     String sexo;
     String edad;
-    String peso;
+    double peso;
     String altura;
     String tipo;
     String habitat;
@@ -21,7 +21,7 @@ public class Animal implements AutoCloseable {
     boolean comportamiento;
     int id;
 
-    public Animal(String nombre, String especie, String raza, String color, String sexo, String edad, String peso, String altura, String tipo, String habitat, String alimentacion, String reproduccion, String cuidados, String enfermedades, String vacunas, boolean salud, boolean comportamiento, int id) {
+    public Animal(String nombre, String especie, String raza, String color, String sexo, String edad, double peso, String altura, String tipo, String habitat, String alimentacion, String reproduccion, String cuidados, String enfermedades, String vacunas, boolean salud, boolean comportamiento, int id) {
         this.nombre = nombre;
         this.especie = especie;
         this.raza = raza;
@@ -127,12 +127,12 @@ public class Animal implements AutoCloseable {
     }
 
 
-    public String getPeso() {
+    public double getPeso() {
         return peso;
     }
 
 
-    public void setPeso(String peso) {
+    public void setPeso(double peso) {
         this.peso = peso;
     }
 
