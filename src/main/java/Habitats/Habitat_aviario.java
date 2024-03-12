@@ -10,7 +10,7 @@ public class Habitat_aviario extends Habitat {
 
     List <Animal_aviario> animales;
 
-    public Habitat_aviario(String nombre, double temperatura, double humedad, double limpieza, double altura, double ancho) {
+    public Habitat_aviario(String nombre, double temperatura, double humedad, String limpieza, double altura, double ancho) {
         super(nombre, temperatura, humedad, limpieza);
         this.altura = altura;
         this.ancho = ancho;
