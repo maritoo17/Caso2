@@ -47,4 +47,12 @@ public class Animal_acuatico extends Animal {
             this.tipo_agua = tipo_agua;
         }
 
+        public void nadar() {
+            System.out.println("Nadando");
+        }
+
+        public void alimentarse() {
+            System.out.println("Alimentandose");
+        }
+
     }
