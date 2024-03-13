@@ -1,9 +1,12 @@
 package Visitantes;
 
+import Animales.Animal;
+import java.util.List;
+
 public class Visitante {
     String nombre;
 
-    public Visitante(String nombre) {
+    public Visitante(String nombre, int i) {
         this.nombre = nombre;
     }
 
@@ -21,5 +24,11 @@ public class Visitante {
 
     public void visitarHabitat() {
         System.out.println("Visitante " + nombre + " visitando el habitat");
+    }
+
+    public void verAnimal(String habitatElegido, List<Animal> animales) {
+    }
+
+    public void visitarAnimal(Animal animalSeleccionado) {
     }
 }

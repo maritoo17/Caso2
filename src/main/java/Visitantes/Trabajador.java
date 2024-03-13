@@ -24,4 +24,8 @@ public class Trabajador {
     public String getPuesto() {
         return puesto;
     }
+
+    public void vigilar () {
+        System.out.println("Trabajador " + nombre + " vigilando el habitat");
+    }
 }

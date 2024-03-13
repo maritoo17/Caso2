@@ -5,16 +5,13 @@ public class Animal_terrestre extends Animal{
     boolean patas;
     boolean cola;
     boolean pelaje;
-    String tipo_terrestre;
 
-    public Animal_terrestre(String nombre, String especie, String raza, String color, String sexo, String edad, double peso, String altura, String tipo, String habitat, String alimentacion, String reproduccion, String cuidados, String enfermedades, String vacunas, int id,boolean salud, boolean comportamiento,  boolean patas, boolean cola, boolean pelaje, String tipo_terrestre) {
-        super(nombre, especie, raza, color, sexo, edad, peso, altura, tipo, habitat, alimentacion, reproduccion, cuidados, enfermedades, vacunas, comportamiento, salud, id);
+    public Animal_terrestre(String nombre, String especie, String color, String edad, String alimentacion, boolean patas, boolean cola, boolean pelaje) {
+        super(nombre, especie, color, edad, alimentacion, "Habitat_terrestre");
         this.patas = patas;
         this.cola = cola;
         this.pelaje = pelaje;
-        this.tipo_terrestre = tipo_terrestre;
     }
-
     public boolean isPatas() {
         return patas;
     }
@@ -38,14 +35,4 @@ public class Animal_terrestre extends Animal{
     public void setPelaje(boolean pelaje) {
         this.pelaje = pelaje;
     }
-
-    public String getTipo_terrestre() {
-        return tipo_terrestre;
-    }
-
-    public void setTipo_terrestre(String tipo_terrestre) {
-        this.tipo_terrestre = tipo_terrestre;
-    }
-
-
 }

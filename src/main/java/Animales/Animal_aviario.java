@@ -5,14 +5,12 @@ public class Animal_aviario extends Animal {
     boolean vuela;
     boolean pico;
     boolean plumaje;
-    String tipo_aviario;
 
-    public Animal_aviario(String nombre, String especie, String raza, String color, String sexo, String edad, double peso, String altura, String tipo, String habitat, String alimentacion, String reproduccion, String cuidados, String enfermedades, String vacunas, int id, boolean salud, boolean comportamiento,  boolean vuela, boolean pico, boolean plumaje, String tipo_aviario) {
-        super(nombre, especie, raza, color, sexo, edad, peso, altura, tipo, habitat, alimentacion, reproduccion, cuidados, enfermedades, vacunas, comportamiento, salud, id);
+    public Animal_aviario (String nombre, String especie, String color, String edad, String alimentacion, boolean vuela, boolean pico, boolean plumaje) {
+        super(nombre, especie, color, edad, alimentacion, "Habitat_aviario");
         this.vuela = vuela;
         this.pico = pico;
         this.plumaje = plumaje;
-        this.tipo_aviario = tipo_aviario;
     }
 
     public boolean isVuela() {
@@ -38,13 +36,4 @@ public class Animal_aviario extends Animal {
     public void setPlumaje(boolean plumaje) {
         this.plumaje = plumaje;
     }
-
-    public String getTipo_aviario() {
-        return tipo_aviario;
-    }
-
-    public void setTipo_aviario(String tipo_aviario) {
-        this.tipo_aviario = tipo_aviario;
-    }
-
 }

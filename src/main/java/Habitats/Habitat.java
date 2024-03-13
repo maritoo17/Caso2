@@ -1,16 +1,23 @@
 package Habitats;
 
+import Animales.Animal;
+import java.util.Map;
+import java.util.HashMap;
+
 public class Habitat {
     String nombre;
     double temperatura;
     double humedad;
     String limpieza;
+    Map<String, Animal> animales = new HashMap<>();
+
 
     public Habitat(String nombre, double temperatura, double humedad, String limpieza) {
         this.nombre = nombre;
         this.temperatura = temperatura;
         this.humedad = humedad;
         this.limpieza = limpieza;
+        this.animales = new HashMap<>();
     }
 
     public String getNombre() {
@@ -42,5 +49,16 @@ public class Habitat {
         System.out.println("Temperatura: " + temperatura);
         System.out.println("Humedad: " + humedad);
         System.out.println("Limpieza: " + limpieza);
+    }
+
+    public Map<String, Animal> getAnimales() {
+        return animales;
+    }
+
+    public void mostrarAnimales() {
+    }
+
+    public String getId() {
+        return null;
     }
 }

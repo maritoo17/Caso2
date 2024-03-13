@@ -7,52 +7,43 @@ public class Animal_acuatico extends Animal {
     boolean escamas;
     String tipo_agua;
 
-    public Animal_acuatico (String nombre, String especie, String raza, String color, String sexo, String edad, double peso, String altura, String tipo, String habitat, String alimentacion, String reproduccion, String cuidados, String enfermedades, String vacunas, int id,boolean salud, boolean comportamiento, boolean aletas, boolean branquias, boolean escamas, String tipo_agua) {
-        super(nombre, especie, raza, color, sexo, edad, peso, altura, tipo, habitat, alimentacion, reproduccion, cuidados, enfermedades, vacunas, comportamiento, salud, id);
-            this.aletas = aletas;
-            this.branquias = branquias;
-            this.escamas = escamas;
-            this.tipo_agua = tipo_agua;
-        }
-
-        public boolean isAletas() {
-            return aletas;
-        }
-
-        public void setAletas(boolean aletas) {
-            this.aletas = aletas;
-        }
-
-        public boolean isBranquias() {
-            return branquias;
-        }
-
-        public void setBranquias(boolean branquias) {
-            this.branquias = branquias;
-        }
-
-        public boolean isEscamas() {
-            return escamas;
-        }
-
-        public void setEscamas(boolean escamas) {
-            this.escamas = escamas;
-        }
-
-        public String getTipo_agua() {
-            return tipo_agua;
-        }
-
-        public void setTipo_agua(String tipo_agua) {
-            this.tipo_agua = tipo_agua;
-        }
-
-        public void nadar() {
-            System.out.println("Nadando");
-        }
-
-        public void alimentarse() {
-            System.out.println("Alimentandose");
-        }
-
+    public Animal_acuatico(String nombre, String especie, String color, String edad, String alimentacion, boolean aletas) {
+        super(nombre, especie, color, edad, alimentacion, "Habitat_acuatico");
+        this.aletas = aletas;
+        this.branquias = branquias;
+        this.escamas = escamas;
+        this.tipo_agua = tipo_agua;
     }
+
+    public boolean isAletas() {
+        return aletas;
+    }
+
+    public void setAletas(boolean aletas) {
+        this.aletas = aletas;
+    }
+
+    public boolean isBranquias() {
+        return branquias;
+    }
+
+    public void setBranquias(boolean branquias) {
+        this.branquias = branquias;
+    }
+
+    public boolean isEscamas() {
+        return escamas;
+    }
+
+    public void setEscamas(boolean escamas) {
+        this.escamas = escamas;
+    }
+
+    public String getTipo_agua() {
+        return tipo_agua;
+    }
+
+    public void setTipo_agua(String tipo_agua) {
+        this.tipo_agua = tipo_agua;
+    }
+}
