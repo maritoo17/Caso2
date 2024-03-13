@@ -2,25 +2,23 @@ package MantenimientoYSeguridad;
 
 import Habitats.Habitat;
 import Visitantes.Trabajador;
+import Animales.Animal;
 
 public class Mantenimiento {
-    private Trabajador trabajador;
+    private String nombre;
+    private Animal animal;
+    private Habitat habitat;
 
-    public Mantenimiento(Trabajador trabajador) {
-        this.trabajador = trabajador;
+    public Mantenimiento(String nombre, Animal animal, Habitat habitat) {
+        this.nombre = nombre;
+        this.animal = animal;
+        this.habitat = habitat;
     }
 
     public Mantenimiento(String pedro, Object o, Habitat habitatSeleccionado) {
     }
-
-    public void imprimirDatos (String habitat, String animal) {
-        System.out.println ("Trabajador: " + trabajador.getNombre());
-        System.out.println ("Puesto: " + trabajador.getPuesto());
-        System.out.println ("Habitat: " + habitat);
-        System.out.println ("Animal: " + animal);
-    }
     
     public void hacerMantenimiento () {
-        System.out.println("Trabajador " + trabajador.getNombre() + " realizando mantenimiento");
+        System.out.println("El trabajador " + nombre + " está realizando el seguimiento del animal " + animal.getNombre() + " en el hábitat " + habitat.getId() + ".");
     }
 }

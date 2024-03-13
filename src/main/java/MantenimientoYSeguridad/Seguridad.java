@@ -4,7 +4,7 @@ import Habitats.Habitat;
 
 public class Seguridad {
 
-    public Seguridad(String pedro, int i, Habitat habitatSeleccionado) {
+    public Seguridad(String nombre, int i, Habitat habitatSeleccionado) {
     }
 
     public void vigilar() {
@@ -12,6 +12,5 @@ public class Seguridad {
     }
 
     public void vigilarHabitat() {
-        System.out.println("Trabajador vigilando el habitat");
     }
 }

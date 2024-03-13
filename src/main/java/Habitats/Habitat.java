@@ -55,10 +55,18 @@ public class Habitat {
         return animales;
     }
 
-    public void mostrarAnimales() {
+    public String getId() {
+        return nombre;
     }
 
-    public String getId() {
-        return null;
+    public void mostrarAnimales() {
+        if (animales.isEmpty()) {
+            System.out.println("No hay animales en este hábitat.");
+        } else {
+            System.out.println("Animales en este hábitat:");
+            for (String nombreAnimal : animales.keySet()) {
+                System.out.println(nombreAnimal);
+            }
+        }
     }
 }

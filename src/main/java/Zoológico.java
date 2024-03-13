@@ -1,3 +1,4 @@
+import java.util.Map;
 import java.util.Scanner;
 
 import Animales.*;
@@ -16,18 +17,30 @@ public class Zoológico {
         Habitat_aviario aviario = new Habitat_aviario("Aviario", 200.0, 150.0, "false", 100.0, 75.0);
         Habitat_terrestre terrestre = new Habitat_terrestre("Terrestre", 300.0, 225.0, "true", "Tierra", "Árboles");
 
-        Animal_acuatico tiburon = new Animal_acuatico("Mordisquitos", "Tiburón", "Blanco", "8", "Carnívoro", true);
-        Animal_acuatico delfin = new Animal_acuatico("Saltimbanqui", "Delfín", "Azul", "4", "Herbívoro", true);
-        Animal_acuatico ballena = new Animal_acuatico("Wally", "Ballena", "Azul", "3", "Herbívoro", true);
+        Animal_acuatico tiburon = new Animal_acuatico("Mordisquitos(tiburón)", "Tiburón", "Blanco", "8", "Carnívoro", true);
+        Animal_acuatico delfin = new Animal_acuatico("Saltimbanqui(delfín)", "Delfín", "Azul", "4", "Herbívoro", true);
+        Animal_acuatico ballena = new Animal_acuatico("Wally(ballena)", "Ballena", "Azul", "3", "Herbívoro", true);
 
-        Animal_aviario aguila = new Animal_aviario("Falcao", "Águila", "Blanco y marrón", "7", "Carnívoro", true, true, true);
-        Animal_aviario loro = new Animal_aviario("Charlatán", "Loro", "Colorido", "4", "Herbívoro", true, true, true);
-        Animal_aviario pinguino = new Animal_aviario("Kanye Nest", "Pingüino", "Blanco y negro", "5", "Carnívoro", false, true, false);
+        acuatico.getAnimales().put(tiburon.getNombre(), tiburon);
+        acuatico.getAnimales().put(delfin.getNombre(), delfin);
+        acuatico.getAnimales().put(ballena.getNombre(), ballena);
 
-        Animal_terrestre leon = new Animal_terrestre("Simba", "León", "Naranja", "4", "Carnívvoro", true, true, true);
-        Animal_terrestre elefante = new Animal_terrestre("Dumbo", "Elefante", "Gris", "6", "Herbívoro", true, true, false);
-        Animal_terrestre jirafa = new Animal_terrestre("Cuellilargo", "Jirafa", "Amarillo", "7", "Herbívoro", true, true, false);
+        Animal_aviario aguila = new Animal_aviario("Falcao(águila)", "Águila", "Blanco y marrón", "7", "Carnívoro", true, true, true);
+        Animal_aviario loro = new Animal_aviario("Charlatán(loro)", "Loro", "Colorido", "4", "Herbívoro", true, true, true);
+        Animal_aviario pinguino = new Animal_aviario("Kanye Nest(pingüino)", "Pingüino", "Blanco y negro", "5", "Carnívoro", false, true, false);
 
+        aviario.getAnimales().put(aguila.getNombre(), aguila);
+        aviario.getAnimales().put(loro.getNombre(), loro);
+        aviario.getAnimales().put(pinguino.getNombre(), pinguino);
+
+
+        Animal_terrestre leon = new Animal_terrestre("Simba(león)", "León", "Naranja", "4", "Carnívvoro", true, true, true);
+        Animal_terrestre elefante = new Animal_terrestre("Dumbo(elefante)", "Elefante", "Gris", "6", "Herbívoro", true, true, false);
+        Animal_terrestre jirafa = new Animal_terrestre("Cuellilargo(jirafa)", "Jirafa", "Amarillo", "7", "Herbívoro", true, true, false);
+
+        terrestre.getAnimales().put(leon.getNombre(), leon);
+        terrestre.getAnimales().put(elefante.getNombre(), elefante);
+        terrestre.getAnimales().put(jirafa.getNombre(), jirafa);
 
         if (userType.equalsIgnoreCase("Trabajador")) {
             System.out.println("Eres un trabajador. ¿Qué tarea quieres realizar? (Vigilar/Seguimiento)");
@@ -55,7 +68,7 @@ public class Zoológico {
 
                 System.out.println("Estás vigilando el hábitat: " + habitatSeleccionado.getId());
 
-                Seguridad vigilante = new Seguridad("Pedro", 30, habitatSeleccionado);
+                Seguridad vigilante = new Seguridad("Sebas", 27, habitatSeleccionado);
                 vigilante.vigilarHabitat();
 
             } else if (tarea.equalsIgnoreCase("Seguimiento")) {
@@ -79,18 +92,19 @@ public class Zoológico {
                 }
 
                 System.out.println("¿Qué animal quieres seleccionar para el seguimiento?");
-                for (int i = 0; i < habitatSeleccionado.getAnimales().size(); i++) {
-                    System.out.println((i + 1) + ". " + habitatSeleccionado.getAnimales().get(i).getClass());
+                Map<String, Animal> animales = habitatSeleccionado.getAnimales();
+                for (String nombreAnimal : animales.keySet()) {
+                    System.out.println(nombreAnimal);
                 }
-                int animalChoice = scanner.nextInt();
-                scanner.nextLine();
+                String nombreAnimalElegido = scanner.nextLine();
 
-                if (animalChoice < 1 || animalChoice > habitatSeleccionado.getAnimales().size()) {
-                    System.out.println("No se reconoce el animal seleccionado.");
+                Animal animalSeleccionado = animales.get(nombreAnimalElegido);
+                if (animalSeleccionado == null) {
+                    System.out.println("No se reconoce el animal seleccionado.Asegúrate de ingresar el nombre del animal exactamente como aparece en la lista.");
                     return;
                 }
 
-                Mantenimiento seguimiento = new Mantenimiento("Pedro", habitatSeleccionado.getAnimales().get(animalChoice - 1), habitatSeleccionado);
+                Mantenimiento seguimiento = new Mantenimiento("Pedro", animalSeleccionado, habitatSeleccionado);
                 seguimiento.hacerMantenimiento();
             } else {
                 System.out.println("No se reconoce la tarea seleccionada.");
@@ -116,17 +130,16 @@ public class Zoológico {
             }
 
             habitatSeleccionado.mostrarAnimales();
-            System.out.println("¿Qué animal quieres visitar? (1/2/3)");
-            int animalChoice = scanner.nextInt();
-            scanner.nextLine();
+            System.out.println("¿Qué animal quieres visitar?");
+            String nombreAnimalElegido = scanner.nextLine();
 
-            if (animalChoice < 1 || animalChoice > habitatSeleccionado.getAnimales().size()) {
+            Animal animalSeleccionado = habitatSeleccionado.getAnimales().get(nombreAnimalElegido);
+            if (animalSeleccionado == null) {
                 System.out.println("No se reconoce el animal seleccionado.");
                 return;
             }
 
-            Animal animalSeleccionado = (Animal) habitatSeleccionado.getAnimales().get(animalChoice - 1);
-            Visitante visitante = new Visitante("Juan", 25);
+            Visitante visitante = new Visitante("Alberto", 43);
             visitante.visitarAnimal(animalSeleccionado);
         } else {
             System.out.println("No se reconoce el tipo de usuario seleccionado.");
